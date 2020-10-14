@@ -47,9 +47,9 @@ TARGET_BASE1=test_foo
 #TARGET_BASE2=test2
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
 #TARGET2 = $(TARGET_BASE2)$(TARGET_EXTENSION)
-SRC_FILES1=$(UNITY_ROOT)/src/unity.c src/foo.c  test/TestFoo.c  test/test_runners/TestFoo_Runner.c
+SRC_FILES1=$(UNITY_ROOT)/src/unity.c $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c src/foo.c  test/TestFoo.c  test/test_runners/TestFoo_Runner.c
 #SRC_FILES2=$(UNITY_ROOT)/src/unity.c src/ProductionCode2.c test/TestProductionCode2.c test/test_runners/TestProductionCode2_Runner.c
-INC_DIRS=-Isrc -I$(UNITY_ROOT)/src
+INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
 
 all: clean default
