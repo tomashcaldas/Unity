@@ -1,24 +1,25 @@
-
 #include "foo.h"
 #include "unity.h"
+#include "unity_fixture.h"
 
+TEST_GROUP(Foo);
 
-void setUp(void)
+TEST_SETUP(Foo)
 {
 }
 
-void tearDown(void)
+TEST_TEAR_DOWN(Foo)
 {
 }
 
-void test_foo1(void)
+TEST(Foo, test_foo1)
 {
-  /* All of these should pass */
-  TEST_ASSERT_EQUAL(-2, foo(1,2));
-  TEST_ASSERT_EQUAL(-1, foo(2,2));
+    /* All of these should pass */
+    TEST_ASSERT_EQUAL(-2, foo(1,2));
+    TEST_ASSERT_EQUAL(-1, foo(2,2));
 }
 
-void test_foo2(void)
+TEST(Foo, test_foo2)
 {
-  TEST_ASSERT_EQUAL(2, foo(1,2)); // vai dar erro !!!!
+    TEST_ASSERT_EQUAL(2, foo(1,2)); // vai dar erro !!!!
 }
