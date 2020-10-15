@@ -54,14 +54,16 @@ SRC_FILES1=\
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
 
-all: clean default
+all: clean compile run
 
-default:
+compile:
 	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
+
+run:
 	- ./$(TARGET1) -v
 
 clean:
 	$(CLEANUP) $(TARGET1)
 
 ci: CFLAGS += -Werror
-ci: default
+ci: compile
