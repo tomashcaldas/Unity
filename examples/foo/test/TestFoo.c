@@ -12,14 +12,15 @@ TEST_TEAR_DOWN(Foo)
 {
 }
 
-TEST(Foo, test_foo1)
+TEST(Foo, TestFoo1)
 {
-    /* All of these should pass */
-    TEST_ASSERT_EQUAL(-2, foo(1,2));
-    TEST_ASSERT_EQUAL(-1, foo(2,2));
+  // All of these should pass
+  TEST_ASSERT_EQUAL(-2, foo(1,2));
+  TEST_ASSERT_EQUAL(-1, foo(2,2));
 }
 
-TEST(Foo, test_foo2)
+TEST(Foo, TestFoo2)
 {
-    TEST_ASSERT_EQUAL(2, foo(1,2)); // vai dar erro !!!!
+  // This test will fail
+  TEST_ASSERT_EQUAL(2, foo(1,2));
 }
